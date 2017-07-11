@@ -10,6 +10,12 @@ class FareRule < ApplicationRecord
     FareRule.find_by(gate1: g1, gate2: g2)
   end
 
+  def self.exitable?(entered_gate, exited_gate, ticket_fare)
+    if (fare_rule = find_by_gates(entered_gate, exited_gate))
+      fare_rule.fare <= ticket_fare
+    end
+  end
+
   private
 
   def must_have_ordered_gates
