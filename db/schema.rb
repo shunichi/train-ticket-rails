@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710234011) do
+ActiveRecord::Schema.define(version: 20170711040259) do
+
+  create_table "fare_rules", force: :cascade do |t|
+    t.integer "fare", null: false
+    t.integer "gate1_id", null: false
+    t.integer "gate2_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gate1_id", "gate2_id"], name: "index_fare_rules_on_gate1_id_and_gate2_id", unique: true
+  end
 
   create_table "gates", force: :cascade do |t|
     t.string "name", null: false

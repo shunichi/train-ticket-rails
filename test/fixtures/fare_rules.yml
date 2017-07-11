@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+umeda_to_juso:
+  fare: 150
+  gate1: umeda
+  gate2: juso
+
+umeda_to_mikuni:
+  fare: 190
+  gate1: umeda
+  gate2: mikuni
+
+juso_to_mikuni:
+  fare: 150
+  gate1: juso
+  gate2: mikuni
